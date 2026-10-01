@@ -9,14 +9,17 @@ if not exist "%VSWHERE%" (
 )
 for /f "usebackq tokens=*" %%i in (`"%VSWHERE%" -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath`) do set "VSROOT=%%i"
 if not defined VSROOT exit /b 1
-call "%VSROOT%\VC\Auxiliary\Build\vcvars64.bat" > evidencias\compilacao.txt 2>&1
+call "%VSROOT%\VC\Auxiliary\Build\vcvars64.bat"
 if errorlevel 1 goto falha
+echo Compilacao C++17 / Windows x64 > evidencias\compilacao.txt
 echo COMANDO: cl /std:c++17 /EHsc /W4 /WX /O2 /MT /utf-8 produtor.cpp /Fe:produtor.exe >> evidencias\compilacao.txt
 cl /std:c++17 /EHsc /W4 /WX /O2 /MT /utf-8 produtor.cpp /Fe:produtor.exe >> evidencias\compilacao.txt 2>&1
 if errorlevel 1 goto falha
 echo COMANDO: cl /std:c++17 /EHsc /W4 /WX /O2 /MT /utf-8 consumidor.cpp /Fe:consumidor.exe >> evidencias\compilacao.txt
 cl /std:c++17 /EHsc /W4 /WX /O2 /MT /utf-8 consumidor.cpp /Fe:consumidor.exe >> evidencias\compilacao.txt 2>&1
 if errorlevel 1 goto falha
+if not exist produtor.exe goto falha
+if not exist consumidor.exe goto falha
 echo RESULTADO: ambos os programas compilados; codigo 0. >> evidencias\compilacao.txt
 type evidencias\compilacao.txt
 exit /b 0
