@@ -1,0 +1,16 @@
+COMANDO: produtor.exe 10
+PRODUTOR PID=7312 endereco virtual=0000024F7F160000
+Entrada: 10
+Elementos gravados: 7
+Memoria reservada: 32776 bytes
+Dados prontos. Aguardando consumidor (120 segundos)...
+Leitura confirmada. Recursos serao liberados.
+Codigo produtor: 0
+
+COMANDO: consumidor.exe
+CONSUMIDOR PID=7412 endereco virtual=0000025372070000
+Aguardando sinal de dados prontos...
+Quantidade: 7
+Sequencia: 10 5 16 8 4 2 1
+Leitura concluida. Recursos serao liberados.
+Codigo consumidor: 0

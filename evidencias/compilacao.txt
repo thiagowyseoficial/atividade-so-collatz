@@ -1,0 +1,22 @@
+Compilacao C++17 / Windows x64 
+COMANDO: cl /std:c++17 /EHsc /W4 /WX /O2 /MT /utf-8 produtor.cpp /Fe:produtor.exe 
+Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35229 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+produtor.cpp
+Microsoft (R) Incremental Linker Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:produtor.exe 
+produtor.obj 
+COMANDO: cl /std:c++17 /EHsc /W4 /WX /O2 /MT /utf-8 consumidor.cpp /Fe:consumidor.exe 
+Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35229 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+consumidor.cpp
+Microsoft (R) Incremental Linker Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:consumidor.exe 
+consumidor.obj 
+RESULTADO: ambos os programas compilados; codigo 0.

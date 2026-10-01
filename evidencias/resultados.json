@@ -1,0 +1,106 @@
+{
+  "ambiente": {
+    "dataUTC": "2026-10-01T23:17:06.204Z",
+    "plataforma": "win32",
+    "sistema": "Windows Server 2022 Datacenter",
+    "versao": "10.0.20348",
+    "arquitetura": "x64",
+    "commit": "180bce14e27235806f719514f57bb52dac328a0e",
+    "execucao": "https://github.com/thiagowyseoficial/atividade-so-collatz/actions/runs/36939906782"
+  },
+  "total": 14,
+  "testes": [
+    {
+      "teste": "Collatz 5",
+      "resultado": "APROVADO",
+      "quantidade": 6,
+      "sequencia": "5 16 8 4 2 1",
+      "pidProdutor": "5080",
+      "pidConsumidor": "5160"
+    },
+    {
+      "teste": "Collatz 10",
+      "resultado": "APROVADO",
+      "quantidade": 7,
+      "sequencia": "10 5 16 8 4 2 1",
+      "pidProdutor": "7312",
+      "pidConsumidor": "7412"
+    },
+    {
+      "teste": "segundo produtor simultaneo",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Ja existe uma sessao ativa. Encerre-a antes de iniciar outra\r\n"
+    },
+    {
+      "teste": "Collatz 13",
+      "resultado": "APROVADO",
+      "quantidade": 10,
+      "sequencia": "13 40 20 10 5 16 8 4 2 1",
+      "pidProdutor": "3296",
+      "pidConsumidor": "1548"
+    },
+    {
+      "teste": "Collatz 1",
+      "resultado": "APROVADO",
+      "quantidade": 1,
+      "sequencia": "1",
+      "pidProdutor": "3944",
+      "pidConsumidor": "4744"
+    },
+    {
+      "teste": "entrada invalida []",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Uso: produtor.exe <inteiro positivo>\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"0\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: O numero inicial deve ser maior que zero\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"-5\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Informe somente digitos de um inteiro positivo\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"abc\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Informe somente digitos de um inteiro positivo\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"5.5\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Informe somente digitos de um inteiro positivo\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"5\",\"10\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Uso: produtor.exe <inteiro positivo>\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"18446744073709551616\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Entrada excede uint64_t\r\n"
+    },
+    {
+      "teste": "entrada invalida [\"18446744073709551615\"]",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Overflow: 3*n+1 excederia uint64_t\r\n"
+    },
+    {
+      "teste": "consumidor sem produtor",
+      "resultado": "APROVADO",
+      "codigo": 1,
+      "saida": "Erro: Memoria nao encontrada. Inicie primeiro produtor.exe <numero>\r\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+COMANDO: produtor.exe 5
+PRODUTOR PID=5080 endereco virtual=0000018474310000
+Entrada: 5
+Elementos gravados: 6
+Memoria reservada: 32776 bytes
+Dados prontos. Aguardando consumidor (120 segundos)...
+Leitura confirmada. Recursos serao liberados.
+Codigo produtor: 0
+
+COMANDO: consumidor.exe
+CONSUMIDOR PID=5160 endereco virtual=000001E19B190000
+Aguardando sinal de dados prontos...
+Quantidade: 6
+Sequencia: 5 16 8 4 2 1
+Leitura concluida. Recursos serao liberados.
+Codigo consumidor: 0
