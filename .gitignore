@@ -1,0 +1,7 @@
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.rar
+.pdf-profile/
+atualizar_pdf.cjs
