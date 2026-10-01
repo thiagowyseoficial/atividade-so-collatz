@@ -1,0 +1,49 @@
+name: Compilacao e testes Windows
+
+on:
+  push:
+    paths:
+      - '*.cpp'
+      - '*.h'
+      - 'compilar.bat'
+      - 'testar.cjs'
+      - '.github/workflows/testes-windows.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  collatz:
+    runs-on: windows-2022
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compilar com MSVC x64
+        shell: cmd
+        run: compilar.bat
+      - name: Executar produtor e consumidor e conferir resultados
+        shell: pwsh
+        run: node testar.cjs
+      - name: Exibir evidencias completas
+        if: always()
+        shell: pwsh
+        run: |
+          Get-ChildItem evidencias -File | Sort-Object Name | ForEach-Object {
+            Write-Output "INICIO_EVIDENCIA $($_.Name)"
+            Get-Content -LiteralPath $_.FullName
+            Write-Output "FIM_EVIDENCIA $($_.Name)"
+          }
+      - name: Guardar logs e executaveis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias-windows
+          path: |
+            evidencias/
+            produtor.exe
+            consumidor.exe
+          retention-days: 30
+          if-no-files-found: error
