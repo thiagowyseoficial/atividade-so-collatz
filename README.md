@@ -107,8 +107,6 @@ O roteiro está preparado; o ensaio presencial ainda depende dos alunos e do com
 
 - [x] Publicar os fontes e o relatório no repositório público.
 - [x] Inserir a URL do repositório no PDF.
-- [ ] Confirmar com o professor a aceitação de **três alunos**, pois a capa do enunciado especifica atividade **individual**, embora outras seções mencionem “grupo”.
-- [ ] Confirmar que o **link do GitHub substitui o RAR** pedido no enunciado. Por orientação dos alunos, este projeto não contém RAR.
 - [ ] Realizar a entrega no canal definido pelo professor. O prazo informado no enunciado é **01/10/2026, das 19h00 às 22h30**; publicar no GitHub não comprova a entrega nesse canal.
 
 Checklist elaborado com base no PDF “Atividade Complementar — Memória Virtual, Memória Compartilhada e Comunicação entre Processos”, fornecido na disciplina.
